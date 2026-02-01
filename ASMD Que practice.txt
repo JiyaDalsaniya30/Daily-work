@@ -1,0 +1,20 @@
+print("Addition")
+a=int(input("Enter number A :"))
+b=int(input("Enter number B :"))
+sum=a+b
+print(sum)
+print("Substraction")
+a=int(input("Enter number A :"))
+b=int(input("Enter number B :"))
+substraction=a-b
+print(substraction)
+print("Multiplication")
+a=int(input("Enter Number A :"))
+b=int(input("Enter number B :"))
+multiplication=a*b
+print(multiplication)
+print("Division")
+a=int(input("Enter number A :"))
+b=int(input("Enter number B :"))
+division=a/b
+print(division)

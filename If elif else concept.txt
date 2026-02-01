@@ -1,0 +1,11 @@
+a=int(input("Enter Number A : "))
+if a>90:
+    print("Excellent")
+elif a>75:
+    print("Very Good")
+elif a>60:
+    print("Good")
+elif a>45:
+    print("Pass")
+else :
+    print("Fail")
