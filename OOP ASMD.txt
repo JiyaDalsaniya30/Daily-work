@@ -1,0 +1,20 @@
+#include<iostream>
+using namespace std;
+
+int main()
+{
+    int a, b;
+    cout << "a = ";
+    cin >> a;
+    cout << "b = ";
+    cin >> b;
+    int addition = a + b;
+    int substraction = a - b;
+    int multiplication = a * b;
+    int division = a / b;
+    cout << "Addition of a and b is "<< addition << endl;
+    cout << "Substraction of a and b is "<< substraction << endl;
+    cout << "Multiplication of a and b is "<< multiplication << endl;
+    cout << "Division of a and b is "<< division << endl;
+    return 0;
+}
