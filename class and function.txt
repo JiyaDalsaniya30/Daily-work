@@ -1,0 +1,12 @@
+class Student:
+    def data(self):
+        self.name=input("Enter your name : ")
+        self.sem=input("Enter your current semester : ")
+        self.course=input("Enter the course name which you studies : ")
+    def display(self):
+        print("My name is", self.name)
+        print("My current semester is", self.sem)
+        print("The course name which I studies is", self.course)
+s1=Student()
+s1.data()
+s1.display()
