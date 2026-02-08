@@ -1,0 +1,25 @@
+print("Enter your marks of all subjects")
+print("\n")
+M=int(input("Mathematics - "))
+E=int(input("Engish - "))
+C=int(input("Chemistry - "))
+P=int(input("Physics - "))
+Cm=int(input("Computer - "))
+print("\n")
+print("Total number of paper is 5.")
+total=M+E+C+P+Cm
+if (total>500):
+    print("Something is wrong.")
+else:
+    print(f"You Got {total} marks out of 500.")
+print("\n")
+if (total==500):
+    print("You're the Genius.")
+elif (300<total>400):
+    print("Excellent score you got, Good job.")
+elif (total>300):
+    print("Good score you got, very nice.")
+elif (total>200):
+    print("Avreage score you got, nice.")
+else :
+    print("Bad score you got, keep work hard.")
