@@ -1,0 +1,16 @@
+fruits = ["apple", "banana", "mango"]
+fruits.append("orange") 
+print(fruits)
+
+for fruit in fruits:
+    print(fruit)
+
+
+student = {"name": "Amit", "age": 21}
+print(student["name"]) 
+student.update({"city": "Mumbai"}) 
+print(student)
+
+
+tuple_example = (1, 2, 3)
+print(tuple_example[1]) 
