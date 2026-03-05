@@ -1,0 +1,86 @@
+
+import pandas as pd
+from sklearn.preprocessing import StandardScaler
+df = pd.DataFrame({
+    "Age": [20, 25, 30],
+    "Salary": [20000, 50000, 80000]
+})
+print(df)
+scaler = StandardScaler()
+scaled_data = scaler.fit_transform(df)#scaled data is numpy array
+scaled_df = pd.DataFrame(scaled_data, columns=df.columns)
+print(scaled_df)
+
+
+
+#min-max scaling(Normalization)
+import pandas as pd
+from sklearn.preprocessing import MinMaxScaler
+#Create DataFrame
+df = pd.DataFrame({
+    "Income" : [15000, 18000, 20000, 22000, 25000, 30000, 100000]
+})
+#initialize scaler
+scaler = MinMaxScaler()
+#Apply scaling
+df["Scaled_Income"]=scaler.fit_transform(df[["Income"]])
+print(df)
+
+
+
+#feature encoding 1.Label Encoding
+import pandas as pd
+import numpy as np
+from sklearn.preprocessing import LabelEncoder
+performance = ["Good", "Poor", "Excellent", "Average"]
+print(type(performance))
+le = LabelEncoder()
+le.fit(performance)#learn parameter
+le.transform(performance)#applies transformation
+le.fit_transform(performance)#learn and applies
+
+
+
+#feature encoding 2.One-Hot encoding
+
+
+#practical - 7
+import pandas as pd
+from sklearn.feature_selection import SelectKBest, f_classif
+from sklearn.preprocessing import LabelEncoder
+from sklearn.preprocessing import MinMaxScaler
+df=pd.DataFrame({
+    "Name": ["A", "B", "C", "D", "E"],
+    "Gender": ["Male", "Female", "Female", "Male", "Male"],
+    "Math": [85, 75, 66, 85, 99],
+    "Science": [90, 85, 80, 75, 65],
+    "English": [70, 65, 60, 55, 75],
+    "Pass": [1, 1, 1, 0, 0]
+})
+#1. Encode Gender
+le = LabelEncoder()
+df["Gender_encoded"] = le.fit_transform(df["Gender"])
+print(df)
+print("\n")
+print("\n")
+#2.Feature scaling (Math,Science,English)
+scaler = MinMaxScaler()
+df[["Math_scaled", "Science_scaled", "English_scaled"]] = scaler.fit_transform(df[["Math", "Science", "English"]])
+print(df)
+print("\n")
+print("\n")
+#3.Feature selection (select top 2 features)
+#Feature to consider (scaled + encoded)
+x = df[["Gender_encoded", "Math_scaled", "Science_scaled", "English_scaled"]]
+y = df["Pass"]
+#select top 2 features
+selector = SelectKBest(score_func=f_classif, k=2)
+x_new = selector.fit_transform(x,y)
+selected_features = x.columns[selector.get_support()]
+print(selected_features)
+print("Selected Features: ", list(selected_features))
+print("Transformed Data:\n", x_new)
+print("\n")
+print("\n")
+new_dataframe=pd.DataFrame(x_new, columns=selected_features)
+print(new_dataframe)
